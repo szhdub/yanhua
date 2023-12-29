@@ -362,7 +362,6 @@ const appNodes = {
 	menu: '.menu',
 	menuInnerWrap: '.menu__inner-wrap',
 	pauseBtn: '.pause-btn',
-	pauseBtnSVG: '.pause-btn use',
 	soundBtn: '.sound-btn',
 	soundBtnSVG: '.sound-btn use',
 	shellType: '.shell-type',
@@ -410,8 +409,6 @@ if (!fullscreenEnabled()) {
 function renderApp(state) {
 	const pauseBtnIcon = `#icon-${state.paused ? 'play' : 'pause'}`;
 	const soundBtnIcon = `#icon-sound-${soundEnabledSelector() ? 'on' : 'off'}`;
-	appNodes.pauseBtnSVG.setAttribute('href', pauseBtnIcon);
-	appNodes.pauseBtnSVG.setAttribute('xlink:href', pauseBtnIcon);
 	appNodes.soundBtnSVG.setAttribute('href', soundBtnIcon);
 	appNodes.soundBtnSVG.setAttribute('xlink:href', soundBtnIcon);
 	appNodes.controls.classList.toggle('hide', state.menuOpen || state.config.hideControls);
