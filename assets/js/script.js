@@ -27,9 +27,9 @@ const GRAVITY = 0.9; // Acceleration in px/s
 let simSpeed = 1;
 
 function getDefaultScaleFactor() {
-	if (IS_MOBILE) return 0.9;
-	if (IS_HEADER) return 0.75;
-	return 1;
+	if (IS_MOBILE) return 0.5;
+	if (IS_HEADER) return 0.65;
+	return 0.55;
 }
 
 // Width/height values that take scale into account.
@@ -407,7 +407,6 @@ if (!fullscreenEnabled()) {
 
 // First render is called in init()
 function renderApp(state) {
-	const pauseBtnIcon = `#icon-${state.paused ? 'play' : 'pause'}`;
 	const soundBtnIcon = `#icon-sound-${soundEnabledSelector() ? 'on' : 'off'}`;
 	appNodes.soundBtnSVG.setAttribute('href', soundBtnIcon);
 	appNodes.soundBtnSVG.setAttribute('xlink:href', soundBtnIcon);
